@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTL Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>TTL Assistant</h1>
+    <form method="POST">
+        <label><b>Options: </b></label>
+        <input type="checkbox" name="batched_logs" id="batched_logs">
+        <label for="batched_logs">Batched Log Files  </label>
+    
+        <input type="checkbox" name="wait_prompt" id="wait_prompt">
+        <label for="wait_prompt">Wait for FortiGate prompt  </label>
+    
+        <input type="checkbox" name="vdom_aware" id="vdom_aware">
+        <label for="vdom_aware">VDOM aware  </label>
+    
+        <br>
+    
+        <label><b>Select pre-set commands:  </b></label>
+        <input type="checkbox" name="general_status" id="general_status">
+        <label for="general_status">General System Status</label>
+    
+        <input type="checkbox" name="cpu_memory" id="cpu_memory">
+        <label for="cpu_memory">General CPU memory</label>
+    
+        <input type="checkbox" name="cpu_profile" id="cpu_profile">
+        <label for="cpu_profile">CPU profile</label>
+    
+        <input type="checkbox" name="ips" id="ips">
+        <label for="ips">IPS</label>
+    
+        <input type="checkbox" name="wad" id="wad">
+        <label for="wad">WAD</label>
+    
+        <br><br>
+    
+        <label for="one_time">One-Time Commands:</label>
+        <textarea id="one_time" name="one_time" rows="4" cols="50">{{ one_time_text }}</textarea>
+    
+        <label for="looped">Looped Commands:</label>
+        <textarea id="looped" name="looped" rows="4" cols="50">{{ looped_text }}</textarea>
+    
+        <br>
+        <button type="submit">Generate Script</button>
+    </form>
+
+    {% if output_script %}
+    <h2>Generated TTL Script:</h2>
+    <pre>{{ output_script }}</pre>
+    {% endif %}
+</body>
+</html>
