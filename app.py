@@ -16,7 +16,7 @@ def index():
         looped_text = request.form.get("looped", default_looped_text)
         
         if 'general_status' in request.form:
-            one_time_text += "\nget sys status"
+            one_time_text += "\nget sys statusss"
             looped_text += "\nfnsysctl date"
             looped_text += "\nget sys perf status"
 
