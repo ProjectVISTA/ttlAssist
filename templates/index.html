@@ -10,31 +10,31 @@
     <h1>TTL Assistant</h1>
     <form method="POST">
         <label><b>Options: </b></label>
-        <input type="checkbox" name="batched_logs" id="batched_logs">
-        <label for="batched_logs">Batched Log Files  </label>
-    
-        <input type="checkbox" name="wait_prompt" id="wait_prompt">
-        <label for="wait_prompt">Wait for FortiGate prompt  </label>
-    
-        <input type="checkbox" name="vdom_aware" id="vdom_aware">
-        <label for="vdom_aware">VDOM aware  </label>
+        <input type="checkbox" name="batched_logs" id="batched_logs" {% if batched_logs_checked %}checked{% endif %}>
+        <label for="batched_logs">Batched Log Files</label>
+
+        <input type="checkbox" name="wait_prompt" id="wait_prompt" {% if wait_prompt_checked %}checked{% endif %}>
+        <label for="wait_prompt">Wait for FortiGate prompt (Dont use pause)</label>
+
+        <input type="checkbox" name="vdom_aware" id="vdom_aware" {% if vdom_aware_checked %}checked{% endif %}>
+        <label for="vdom_aware">VDOM aware</label>
     
         <br>
-    
-        <label><b>Select pre-set commands:  </b></label>
-        <input type="checkbox" name="general_status" id="general_status">
+        
+        <label><b>Select pre-set commands:</b></label>
+        <input type="checkbox" name="general_status" id="general_status" {% if general_status_checked %}checked{% endif %}>
         <label for="general_status">General System Status</label>
-    
-        <input type="checkbox" name="cpu_memory" id="cpu_memory">
+
+        <input type="checkbox" name="cpu_memory" id="cpu_memory" {% if cpu_memory_checked %}checked{% endif %}>
         <label for="cpu_memory">General CPU memory</label>
-    
-        <input type="checkbox" name="cpu_profile" id="cpu_profile">
+
+        <input type="checkbox" name="cpu_profile" id="cpu_profile" {% if cpu_profile_checked %}checked{% endif %}>
         <label for="cpu_profile">CPU profile</label>
-    
-        <input type="checkbox" name="ips" id="ips">
+
+        <input type="checkbox" name="ips" id="ips" {% if ips_checked %}checked{% endif %}>
         <label for="ips">IPS</label>
-    
-        <input type="checkbox" name="wad" id="wad">
+
+        <input type="checkbox" name="wad" id="wad" {% if wad_checked %}checked{% endif %}>
         <label for="wad">WAD</label>
     
         <br><br>
